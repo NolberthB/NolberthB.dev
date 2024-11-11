@@ -1,0 +1,50 @@
+---
+import About from './about.astro'
+const avatarUrl = "https://bonhomme.lol/profile.png";
+const userName = "Nolberto Betancourt";
+const userTitle = "Software Engineer";
+const userLink = "https://www.linkedin.com/in/nolberthb/";
+---
+
+<div>
+  <div id="User" class="flex space-x-4 items-center">
+    <img
+    src={avatarUrl}
+    alt={userName}
+    class="w-14 h-14 sm:w-15 sm:h-15 lg:w-24 lg:h-24 rounded-full border-1 border-white transition-transform transform hover:scale-100 hover:shadow-[0_0_20px_10px_rgba(255,255,255,0.2)] duration-300"
+    />
+
+    <div>
+      <h2 class="text-sm sm:text-sm lg:text-xl font-bold">{userName}</h2>
+      <p class="text-sm xs:text-xs sm:text-sm text-gray-400">{userTitle}</p>
+      <a href={userLink} class="text-sm xs:text-xs sm:text-sm text-gray-500">
+        <svg 
+          xmlns="http://www.w3.org/2000/svg"  
+          width="24"  
+          height="24"  
+          viewBox="0 0 24 24"  
+          fill="none"  
+          stroke="currentColor"  
+          stroke-width="2"  
+          stroke-linecap="round"  
+          stroke-linejoin="round"  
+          class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <path d="M8 11v5" />
+          <path d="M8 8v.01" />
+          <path d="M12 16v-5" />
+          <path d="M16 16v-3a2 2 0 1 0 -4 0" />
+          <path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" />
+          </svg>
+      </a>
+    </div>
+
+  </div>
+  
+  <div id="About me" class="pt-8 border-b border-dashed border-gray-50 pb-4 mb-7">
+    <About/>
+  </div>
+</div>
+
+
+

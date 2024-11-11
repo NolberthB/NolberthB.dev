@@ -1,0 +1,38 @@
+---
+import ProjectItem from "./Project-Item.astro";
+
+const PROJECTS = [
+  {
+    title: "Point Of Sale.",
+    description:
+      "Una APDesarrollé un sistema de punto de venta (POS) basado en una arquitectura de microservicios utilizando Node.js, Docker y AWS para garantizar escalabilidad y rendimiento.",
+    link: "https://github.com/NolberthB",
+  },
+  {
+    title: "Sistema de Gestión de Inventarios",
+    description: "Desarrollé un sistema de gestión de inventarios utilizando una arquitectura hexagonal con Node.js y Docker para asegurar escalabilidad y flexibilidad. El sistema permite un control detallado de existencias, seguimiento de movimientos y reportes en tiempo real",
+    link: "https://github.com/NolberthB",
+  },
+  {
+    title: "Sistema de Autenticación y Autorización",
+    description:
+      "Desarrollé un servicio de autenticación y autorización basado en microservicios con Node.js y Docker, desplegado en AWS para alta disponibilidad. El sistema implementa autenticación multifactor y OAuth para seguridad avanzada, y su arquitectura de microservicios permite una gestión flexible de roles y permisos. La integración con bases de datos SQL y NoSQL permite un balance óptimo entre velocidad y seguridad en la verificación de usuarios.",
+    link: "https//github.com/NolberthB",
+  },
+  // {
+  //   title: "",
+  //   description: "Una API de perros surper chida",
+  //   link: "https://github.com/NolberthB",
+  // },
+];
+---
+
+<ol class="relative border-s border-gray-400 dark:border-gray-400 mt-7">
+  {
+    PROJECTS.map((project) => (
+      <li class="mb-10 ms-4">
+        <ProjectItem {...project} />
+      </li>
+    ))
+  }
+</ol>
