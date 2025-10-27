@@ -1,4 +1,5 @@
 ---
+import Card from "../components/Card.astro";
 import Header from "../components/header.astro";
 import Projects from "../components/Projects.astro";
 import User from '../components/User.astro'
@@ -12,10 +13,19 @@ import BrifeCase from "../icons/BrifeCase.astro";
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>NolberthB</title>
 </head>
-<body class="flex flex-col items-center mb-0">
+<body class="flex flex-col items-center mb-10">
 	<section id="main-container">
 		<Header />
 		<User />
+
+		<!-- === Experience === -->
+		<h2 class="text-lg font-bold mb-0 flex gap-x-2 items-center">
+			<BrifeCase class="size-5" />
+			Work Experience
+		</h2>
+		<Card />
+
+		<!-- === Projects === -->
 		<h2 class="text-lg font-bold mb-0 flex gap-x-2 items-center">
 			<BrifeCase class="size-5" />
 			Proyectos
@@ -33,7 +43,6 @@ import BrifeCase from "../icons/BrifeCase.astro";
   		margin: 0;
   		padding: 0;
   		box-sizing: border-box;
-		overflow: hidden;
 		background-color: #000;
 	}	
 	body {
