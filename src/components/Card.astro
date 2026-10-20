@@ -5,22 +5,8 @@ const experiences = [
     company: "IYK",
     duration: "2022 - present",
     description: "Building the Whole Wide World✕",
-    skills: ["Remix", "Prisma", "Tailwind", "Shadcn"],
   },
-  {
-    role: "Full Stack & Technical Lead",
-    company: "Everpress",
-    duration: "2020 - 2022",
-    description: "Led a team of 5 engineers to develop our creator tools and e-commerce app. Collaborated closely with the Head of Product to track our tactical objectives, improve technical directions and shipping frequency.",
-    skills: ["React", "Redux", "Symfony", "AWS"],
-  },
-  {
-    role: "Front End Engineer",
-    company: "Freelance",
-    duration: "2016 - 2020",
-    description: "Worked with a range of large and small agencies, start-ups and individuals to build products. Clients included Marvel App, United Nations, Netflix, Dropbox Design.",
-    skills: ["React", "Redux", "Styled Components", "Framer Motion"],
-  }
+  
 ];
 ---
 
@@ -32,12 +18,7 @@ const experiences = [
           {exp.role} – <span class="text-gray-400">{exp.company}</span>
         </h3>
         <span class="text-gray-500">{exp.duration}</span>
-        <p class="mt-2 text-gray-300">{exp.description}</p>
-        <div class="mt-2 flex gap-2 flex-wrap">
-          {exp.skills.map(skill => (
-            <span class="bg-gray-700 text-sm px-2 py-1 rounded">{skill}</span>
-          ))}
-        </div>
+        <p class="text-sm mt-2 text-gray-300">{exp.description}</p>
       </div>
      ))}
     </div>

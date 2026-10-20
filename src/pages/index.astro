@@ -1,5 +1,6 @@
 ---
 import Card from "../components/Card.astro";
+import Footer from "../components/Footer.astro";
 import Header from "../components/header.astro";
 import Projects from "../components/Projects.astro";
 import User from '../components/User.astro'
@@ -13,29 +14,55 @@ import BrifeCase from "../icons/BrifeCase.astro";
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>NolberthB</title>
 </head>
-<body class="flex flex-col items-center mb-10">
-	<section id="main-container">
+<body class="min-h-screen flex flex-col">
+  <main class="flex-grow flex flex-col items-center mb-10">
+    <section id="main-container" class="container max-w-3xl mx-auto px-4">
+      <Header />
+      <User />
+
+      <!-- === Experience === -->
+      <h2 class="text-lg font-bold mb-0 flex gap-x-2 items-center">
+        <BrifeCase class="size-5" />
+        Work Experience
+      </h2>
+      <Card />
+
+      <!-- === Projects === -->
+      <h2 class="text-lg font-bold mb-0 flex gap-x-2 items-center">
+        <BrifeCase class="size-5" />
+        Proyectos
+      </h2>
+      <Projects />
+    </section>
+  </main>
+
+  <Footer />
+</body>
+
+<!-- <body class="flex flex-col items-center mb-10">
+	<section id="main-container" class="container max-w-3xl mx-auto px-4">
 		<Header />
 		<User />
 
-		<!-- === Experience === -->
+		 === Experience === 
 		<h2 class="text-lg font-bold mb-0 flex gap-x-2 items-center">
 			<BrifeCase class="size-5" />
 			Work Experience
 		</h2>
 		<Card />
 
-		<!-- === Projects === -->
+		=== Projects ===
 		<h2 class="text-lg font-bold mb-0 flex gap-x-2 items-center">
 			<BrifeCase class="size-5" />
 			Proyectos
 		</h2>
 		<Projects />
 	</section>
+	<Footer />
 
 
 
-</body>
+</body> -->
 </html>
 
 <style>
@@ -60,4 +87,15 @@ import BrifeCase from "../icons/BrifeCase.astro";
   		padding-inline: 20px;
 		height: fit-content;
 	}
-  </style>
+
+	/* 🔥 Ocultar scrollbars pero mantener scroll funcional */
+	::-webkit-scrollbar {
+  		width: 0px;
+  		background: transparent; 
+	}
+
+	html {
+  		scrollbar-width: none; /* Firefox */
+  		-ms-overflow-style: none; /* IE y Edge */
+	}
+</style>

@@ -4,11 +4,11 @@ const avatarUrl = "https://bonhomme.lol/profile.png";
 const userName = "Nolberto Betancourt";
 const userTitle = "Software Engineer";
 const userLink = "https://www.linkedin.com/in/nolberthb/";
-const userCvLink = "#";
+const userCvLink = "https://drive.google.com/file/d/1_qbFC2-EPUQdNLrIuIPzbI-Of8lkjMGB/view?usp=drive_link";
 ---
 
 <div>
-  <div id="User" class="flex space-x-4 items-center pt-7">
+  <div id="User" class="flex space-x-4 items-center pt-20 mt-20">
     <img
     src={avatarUrl}
     alt={userName}
@@ -19,7 +19,7 @@ const userCvLink = "#";
       <h2 class="text-sm sm:text-sm lg:text-xl font-bold">{userName}</h2>
       <p class="text-sm xs:text-xs sm:text-sm text-gray-400">{userTitle}</p>
       <div class="flex flex-row ">
-        <a href={userLink} class="text-sm xs:text-xs sm:text-sm text-gray-500">
+        <a href={userLink} class="text-sm xs:text-xs sm:text-sm text-gray-500 hover:scale-105 transition-all">
           <svg 
            xmlns="http://www.w3.org/2000/svg"  
            width="24"  
@@ -40,7 +40,7 @@ const userCvLink = "#";
            </svg>
         </a>
 
-        <a href={userCvLink} class="text-sm xs:text-xs sm:text-sm text-gray-500">
+        <a href={userCvLink} class="text-sm xs:text-xs sm:text-sm text-gray-500 hover:scale-105 transition-all">
           <svg 
             xmlns="http://www.w3.org/2000/svg" 
             width="24" 
