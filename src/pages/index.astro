@@ -1,101 +1,177 @@
 ---
-import Card from "../components/Card.astro";
-import Footer from "../components/Footer.astro";
-import Header from "../components/header.astro";
-import Projects from "../components/Projects.astro";
-import User from '../components/User.astro'
-import BrifeCase from "../icons/BrifeCase.astro";
+const projects = [
+  {
+    name: "Authentication API",
+    category: "Identity · Backend",
+    description: "A modular REST API with user registration and login, bcrypt password hashing, JWT authentication, HTTP-only cookies, input validation, and PostgreSQL persistence.",
+    stack: ["Node.js", "Express", "JWT", "PostgreSQL", "Sequelize"],
+    url: "https://github.com/NolberthB/authAPI"
+  },
+  {
+    name: "Flight Check-in API",
+    category: "Backend · Business logic",
+    description: "A flight check-in service with deterministic seat assignment, passenger grouping, seat-class rules, structured logging, and automated tests.",
+    stack: ["Node.js", "Express", "MySQL", "Jest", "Pino"],
+    url: null
+  }
+];
+const experience = [
+  {
+    role: "IT Infrastructure Project",
+    company: "TerraShipping",
+    date: "Dec 2024 – Jan 2025",
+    description: "Designed and deployed corporate network infrastructure, with QoS and mesh coverage optimization focused on stable connectivity."
+  },
+  {
+    role: "Full-Stack Developer",
+    company: "Refaccionaria del Puerto",
+    date: "Feb 2023 – Dec 2024",
+    description: "Worked on web application development with JavaScript, TypeScript, and Node.js, applying MVC principles and practical problem-solving."
+  }
+];
+const email = "betanolberto14@gmail.com";
+const github = "https://github.com/NolberthB";
+const linkedin = "https://www.linkedin.com/in/nolberthb/";
 ---
-
-<!DOCTYPE html>
-<html lang="es">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>NolberthB</title>
-</head>
-<body class="min-h-screen flex flex-col">
-  <main class="flex-grow flex flex-col items-center mb-10">
-    <section id="main-container" class="container max-w-3xl mx-auto px-4">
-      <Header />
-      <User />
-
-      <!-- === Experience === -->
-      <h2 class="text-lg font-bold mb-0 flex gap-x-2 items-center">
-        <BrifeCase class="size-5" />
-        Work Experience
-      </h2>
-      <Card />
-
-      <!-- === Projects === -->
-      <h2 class="text-lg font-bold mb-0 flex gap-x-2 items-center">
-        <BrifeCase class="size-5" />
-        Proyectos
-      </h2>
-      <Projects />
-    </section>
-  </main>
-
-  <Footer />
-</body>
-
-<!-- <body class="flex flex-col items-center mb-10">
-	<section id="main-container" class="container max-w-3xl mx-auto px-4">
-		<Header />
-		<User />
-
-		 === Experience === 
-		<h2 class="text-lg font-bold mb-0 flex gap-x-2 items-center">
-			<BrifeCase class="size-5" />
-			Work Experience
-		</h2>
-		<Card />
-
-		=== Projects ===
-		<h2 class="text-lg font-bold mb-0 flex gap-x-2 items-center">
-			<BrifeCase class="size-5" />
-			Proyectos
-		</h2>
-		<Projects />
-	</section>
-	<Footer />
-
-
-
-</body> -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b0e13" />
+    <meta name="description" content="Nolberto Betancourt builds backend APIs and has hands-on experience in corporate IT infrastructure, networking and software engineering." />
+    <meta property="og:title" content="Nolberto Betancourt — Backend & IT Infrastructure" />
+    <meta property="og:description" content="Backend software, networking, and automation." />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Nolberto Betancourt | Backend & IT Infrastructure</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+    <div class="shell">
+      <header class="nav">
+        <a class="logo" href="#top" aria-label="Go to top">NB<span>.</span></a>
+        <nav aria-label="Main navigation">
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+      <main id="content">
+        <section id="top" class="hero" aria-labelledby="hero-title">
+          <p class="eyebrow"><i aria-hidden="true"></i> Backend development · Networking · Automation</p>
+          <p class="intro">Hi, I'm Nolberto Betancourt.</p>
+          <h1 id="hero-title">I build software with an infrastructure mindset<span class="green">.</span></h1>
+          <p class="lead">Computer Systems Engineering student with hands-on experience in backend APIs and corporate IT infrastructure. I enjoy working across code, networks, and the systems that connect them.</p>
+          <div class="actions">
+            <a class="button primary" href="#projects">Explore my work <span aria-hidden="true">↘</span></a>
+            <a class="button secondary" href={'mailto:' + email}>Get in touch <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="social">
+            <a href={github} target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            <a href={linkedin} target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          </div>
+        </section>
+        <section class="section" id="projects" aria-labelledby="projects-title">
+          <p class="section-kicker">01 / Selected work</p>
+          <h2 id="projects-title">Projects</h2>
+          <div class="projects">
+            {projects.map((project) => (
+              <article class="project">
+                <div class="project-top">
+                  <div>
+                    <p class="project-type">{project.category}</p>
+                    <h3>{project.name}</h3>
+                  </div>
+                  {project.url && (
+                    <a class="source" href={project.url} target="_blank" rel="noopener noreferrer" aria-label={'View ' + project.name + ' source on GitHub'}>Source ↗</a>
+                  )}
+                </div>
+                <p class="muted">{project.description}</p>
+                <div class="tags" aria-label={project.name + ' technologies'}>
+                  {project.stack.map((item) => <span class="tag">{item}</span>)}
+                </div>
+              </article>
+            ))}
+          </div>
+          <p class="note">Additional work on <a href={github} target="_blank" rel="noopener noreferrer">GitHub ↗</a></p>
+        </section>
+        <section class="section" id="experience" aria-labelledby="experience-title">
+          <p class="section-kicker">02 / Real-world experience</p>
+          <h2 id="experience-title">Experience</h2>
+          <div class="timeline">
+            {experience.map((item) => (
+              <article class="job">
+                <div class="job-header">
+                  <div><h3>{item.role}</h3><p class="company">{item.company}</p></div>
+                  <time>{item.date}</time>
+                </div>
+                <p class="muted">{item.description}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+        <section class="section" id="background" aria-labelledby="background-title">
+          <p class="section-kicker">03 / Background</p>
+          <h2 id="background-title">A little about me</h2>
+          <p class="muted">I'm pursuing a B.S. in Computer Systems Engineering at Universidad Anáhuac México (2024–present). My technical interests sit where reliable software meets real-world infrastructure.</p>
+          <div class="facts">
+            <p><strong>Core stack</strong>JavaScript · TypeScript · Node.js · REST APIs · SQL · Docker · Git</p>
+            <p><strong>Languages</strong>Spanish (native) · English (Cambridge B2)</p>
+          </div>
+        </section>
+        <section class="contact" id="contact" aria-labelledby="contact-title">
+          <p class="section-kicker">04 / Let's connect</p>
+          <h2 id="contact-title">Let's build something useful.</h2>
+          <p class="muted">Open to opportunities in backend engineering, networking, and automation.</p>
+          <a class="mail" href={'mailto:' + email}>{email} ↗</a>
+        </section>
+      </main>
+      <footer>© {new Date().getFullYear()} Nolberto Betancourt <span>Built with Astro · <a href={github} target="_blank" rel="noopener noreferrer">GitHub ↗</a></span></footer>
+    </div>
+  </body>
 </html>
-
-<style>
-	* {
-  		margin: 0;
-  		padding: 0;
-  		box-sizing: border-box;
-		background-color: #000;
-	}	
-	body {
-  		font-family: Arial, sans-serif;
-  		color: #fff;
-  		display: flex;
-  		justify-content: center;
-  		min-height: 100vh;
-	}
-
-	#main-container {
-		align-items: baseline;
-		max-width: 500px;
-  		width: 100%;
-  		padding-inline: 20px;
-		height: fit-content;
-	}
-
-	/* 🔥 Ocultar scrollbars pero mantener scroll funcional */
-	::-webkit-scrollbar {
-  		width: 0px;
-  		background: transparent; 
-	}
-
-	html {
-  		scrollbar-width: none; /* Firefox */
-  		-ms-overflow-style: none; /* IE y Edge */
-	}
+<style is:global>
+  :root{color-scheme:dark;--bg:#0b0e13;--surface:#111923;--text:#f3f5f8;--muted:#a6afbd;--line:#29323f;--green:#9de6c9}
+  *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:2rem}
+  body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+  a{text-decoration:none;color:inherit}a:focus-visible{outline:2px solid var(--green);outline-offset:4px}
+  ::selection{background:#2c6656;color:white}
+  .shell{width:min(100% - 3rem,800px);margin:auto}
+  .skip-link{position:absolute;top:-100px;left:1rem;background:var(--green);color:var(--bg);padding:.5rem 1rem}
+  .skip-link:focus{top:1rem}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:2rem 0}
+  .logo{font-size:1.35rem;font-weight:800;letter-spacing:-.06em}.logo span,.green{color:var(--green)}
+  .nav nav{display:flex;gap:clamp(.8rem,3vw,2rem);font-size:.88rem;color:var(--muted)}
+  .nav a:hover,.social a:hover,.note a:hover,footer a:hover{color:var(--green)}
+  .hero{padding:clamp(3.8rem,9vw,7rem) 0 5rem}.eyebrow,.section-kicker,.project-type{color:var(--green);font-size:.75rem;letter-spacing:.07em;font-weight:700;text-transform:uppercase}
+  .eyebrow{display:flex;align-items:center;gap:.6rem;margin:0 0 2rem}
+  .eyebrow i{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--green);flex-shrink:0}
+  .intro{color:var(--muted);margin:0 0 .7rem}h1{max-width:720px;font-size:clamp(2.5rem,6.8vw,4.45rem);line-height:1.12;letter-spacing:-.055em;margin:0}
+  .lead{max-width:620px;margin:1.5rem 0 0;color:var(--muted);font-size:1.06rem}
+  .actions{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:2rem}
+  .button{border:1px solid var(--line);border-radius:7px;padding:.7rem 1rem;font-size:.9rem;font-weight:650;display:inline-flex;gap:1rem;align-items:center}
+  .primary{background:var(--green);border-color:var(--green);color:var(--bg)}.primary:hover{background:#bdf3e1}
+  .secondary:hover{background:var(--surface);border-color:var(--muted)}
+  .social{display:flex;gap:1.4rem;margin-top:1.4rem;color:var(--muted);font-size:.9rem}
+  .section,.contact{border-top:1px solid var(--line);padding:4rem 0}
+  .section-kicker{margin:0 0 .4rem}h2{font-size:1.85rem;line-height:1.2;letter-spacing:-.035em;margin:0 0 2rem}
+  h3{font-size:1.14rem;line-height:1.4;letter-spacing:-.025em;margin:0}
+  .projects{display:grid;gap:1rem}.project{background:var(--surface);border:1px solid var(--line);padding:1.4rem;border-radius:12px}
+  .project-top,.job-header{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem}
+  .project-type{font-size:.7rem;margin:0 0 .35rem}.source{font-size:.85rem;font-weight:650;color:var(--green);white-space:nowrap}
+  .source:hover,.mail:hover{text-decoration:underline;text-underline-offset:4px}
+  .muted{color:var(--muted);margin:.85rem 0 1.2rem}.tags{display:flex;gap:.45rem;flex-wrap:wrap}
+  .tag{font-size:.75rem;color:#c4cfda;background:#202a37;border:1px solid #2e3b4a;border-radius:5px;padding:.22rem .6rem}
+  .note{color:var(--muted);font-size:.85rem;margin:1rem 0 0}
+  .timeline{border-left:1px solid var(--line);padding-left:1.35rem}.job{position:relative;margin-bottom:2rem}
+  .job:last-child{margin-bottom:0}.job:before{content:"";position:absolute;left:-1.66rem;top:.5rem;width:8px;height:8px;border-radius:50%;background:var(--green)}
+  .company{color:var(--muted);margin:.15rem 0 0}.job time{color:var(--muted);font-size:.8rem;white-space:nowrap}
+  .job .muted{margin-bottom:0}
+  .facts{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:1.8rem}
+  .facts p{font-size:.87rem;color:var(--muted);margin:0}.facts strong{display:block;color:var(--green);margin-bottom:.4rem;font-size:.73rem;text-transform:uppercase;letter-spacing:.06em}
+  .contact h2{margin-bottom:1rem}.mail{font-size:1.1rem;color:var(--green);font-weight:650;overflow-wrap:anywhere}
+  footer{border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:.75rem;flex-wrap:wrap;padding:1.5rem 0 2.5rem;font-size:.78rem;color:var(--muted)}
+  @media(max-width:600px){.shell{width:min(100% - 2rem,800px)}.nav{padding:1.3rem 0}.nav nav{font-size:.77rem;gap:.8rem}.hero{padding:3.8rem 0 4rem}.section,.contact{padding:3rem 0}.facts{grid-template-columns:1fr;gap:1rem}.job-header{display:block}.job time{display:block;margin-top:.45rem}.project{padding:1.1rem}}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
