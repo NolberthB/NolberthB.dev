@@ -15,14 +15,12 @@ npm run build
 npm run preview
 ~~~
 
-All site content and styles are in \`src/pages/index.astro\`; Astro configuration is in \`astro.config.mjs\`. No browser-side JavaScript or backend service is needed.
+## URL
 
-## Before publishing
+https://nolberth-b-jo5k1jlvg-nolberthbs-projects.vercel.app/
 
-- [ ] Confirm descriptions and dates against your CV.
-- [ ] The Flight Check-in API repository is currently **private**; the portfolio intentionally omits a source link.
-- [ ] Add a shareable, up-to-date English resume PDF link when ready.
-- [ ] Add a canonical URL and preview image once you have a public domain.
-- [ ] Run the production build and test links and layouts on mobile.
 
-No placeholder employers, invented metrics, or unverified certifications are included.
+
+
+
+
